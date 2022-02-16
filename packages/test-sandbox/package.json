@@ -9,6 +9,7 @@
     "@tamagui/colors": "^1.0.0-alpha.64",
     "@tamagui/core": "^1.0.0-alpha.67",
     "@tamagui/feather-icons": "^1.0.0-alpha.64",
+    "@tamagui/reanimated-animations": "^1.0.0-alpha.67",
     "react": "*",
     "react-dom": "*",
     "react-native-reanimated": "^2.4.1",

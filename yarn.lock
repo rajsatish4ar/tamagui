@@ -3896,6 +3896,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@tamagui/reanimated-animations@^1.0.0-alpha.67, @tamagui/reanimated-animations@workspace:packages/reanimated-animations":
+  version: 0.0.0-use.local
+  resolution: "@tamagui/reanimated-animations@workspace:packages/reanimated-animations"
+  dependencies:
+    "@tamagui/build": ^1.0.0-alpha.64
+  languageName: unknown
+  linkType: soft
+
 "@tamagui/site@workspace:packages/site":
   version: 0.0.0-use.local
   resolution: "@tamagui/site@workspace:packages/site"
@@ -4004,6 +4012,7 @@ __metadata:
     "@tamagui/colors": ^1.0.0-alpha.64
     "@tamagui/core": ^1.0.0-alpha.67
     "@tamagui/feather-icons": ^1.0.0-alpha.64
+    "@tamagui/reanimated-animations": ^1.0.0-alpha.67
     babel-polyfill: ^6.26.0
     css-loader: "*"
     css-minimizer-webpack-plugin: "*"

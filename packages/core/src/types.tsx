@@ -1,7 +1,13 @@
 import CSS from 'csstype'
-import React, { HTMLProps, RefObject } from 'react'
-import { TextProps as ReactTextProps, TextStyle } from 'react-native'
-import { GestureResponderEvent, View, ViewProps, ViewStyle } from 'react-native'
+import React, { RefObject } from 'react'
+import {
+  GestureResponderEvent,
+  TextProps as ReactTextProps,
+  TextStyle,
+  View,
+  ViewProps,
+  ViewStyle,
+} from 'react-native'
 
 import { Variable } from './createVariable'
 import { ThemeProviderProps } from './views/ThemeProvider'
@@ -256,10 +262,12 @@ type WithThemeShorthandsAndPseudos<A extends object> =
   | WithThemeAndShorthands<A> & PseudoProps<WithThemeAndShorthands<A>>
 
 //
-// ... and media queries
+// ... media queries and animations
 //
-type WithThemeShorthandsPseudosAndMedia<A extends object> = WithThemeShorthandsAndPseudos<A> &
-  MediaProps<WithThemeShorthandsAndPseudos<A>>
+type WithThemeShorthandsPseudosMediaAnimation<A extends object> = WithThemeShorthandsAndPseudos<A> &
+  MediaProps<WithThemeShorthandsAndPseudos<A>> & {
+    animation?: string
+  }
 
 //
 // Stack
@@ -280,7 +288,7 @@ export type StackStylePropsBase = Omit<ViewStyle, 'display' | 'backfaceVisibilit
   TransformStyleProps &
   WebOnlyStyleProps
 
-export type StackStyleProps = WithThemeShorthandsPseudosAndMedia<StackStylePropsBase>
+export type StackStyleProps = WithThemeShorthandsPseudosMediaAnimation<StackStylePropsBase>
 
 export type StackProps = Omit<RNWInternalProps, 'children'> &
   Omit<ViewProps, 'display' | 'children'> &
@@ -303,7 +311,7 @@ export type StackProps = Omit<RNWInternalProps, 'children'> &
 //   pressStyle?: S | null
 // }
 
-type TextStyleProps = WithThemeShorthandsPseudosAndMedia<
+type TextStyleProps = WithThemeShorthandsPseudosMediaAnimation<
   Omit<TextStyle, 'display' | 'backfaceVisibility'> & TransformStyleProps & WebOnlyStyleProps
 >
 

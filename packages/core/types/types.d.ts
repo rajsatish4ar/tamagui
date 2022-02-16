@@ -1,7 +1,6 @@
 import CSS from 'csstype';
 import React, { RefObject } from 'react';
-import { TextProps as ReactTextProps, TextStyle } from 'react-native';
-import { GestureResponderEvent, View, ViewProps, ViewStyle } from 'react-native';
+import { GestureResponderEvent, TextProps as ReactTextProps, TextStyle, View, ViewProps, ViewStyle } from 'react-native';
 import { Variable } from './createVariable';
 import { ThemeProviderProps } from './views/ThemeProvider';
 export declare type ConfigListener = (conf: TamaguiInternalConfig) => void;
@@ -165,7 +164,9 @@ export declare type PseudoProps<A> = {
 };
 declare type WithThemeAndShorthands<A extends object> = WithThemeValues<A> & WithShorthands<WithThemeValues<A>>;
 declare type WithThemeShorthandsAndPseudos<A extends object> = WithThemeAndShorthands<A> & PseudoProps<WithThemeAndShorthands<A>>;
-declare type WithThemeShorthandsPseudosAndMedia<A extends object> = WithThemeShorthandsAndPseudos<A> & MediaProps<WithThemeShorthandsAndPseudos<A>>;
+declare type WithThemeShorthandsPseudosMediaAnimation<A extends object> = WithThemeShorthandsAndPseudos<A> & MediaProps<WithThemeShorthandsAndPseudos<A>> & {
+    animation?: string;
+};
 declare type WebOnlyStyleProps = {
     cursor?: string;
     contain?: 'none' | 'strict' | 'content' | 'size' | 'layout' | 'paint' | string;
@@ -173,12 +174,12 @@ declare type WebOnlyStyleProps = {
     pointerEvents?: ViewProps['pointerEvents'];
 };
 export declare type StackStylePropsBase = Omit<ViewStyle, 'display' | 'backfaceVisibility' | 'elevation'> & TransformStyleProps & WebOnlyStyleProps;
-export declare type StackStyleProps = WithThemeShorthandsPseudosAndMedia<StackStylePropsBase>;
+export declare type StackStyleProps = WithThemeShorthandsPseudosMediaAnimation<StackStylePropsBase>;
 export declare type StackProps = Omit<RNWInternalProps, 'children'> & Omit<ViewProps, 'display' | 'children'> & StackStyleProps & ComponentPropsBase & {
     ref?: RefObject<View | HTMLElement> | ((node: View | HTMLElement) => any);
     children?: any | any[];
 };
-declare type TextStyleProps = WithThemeShorthandsPseudosAndMedia<Omit<TextStyle, 'display' | 'backfaceVisibility'> & TransformStyleProps & WebOnlyStyleProps>;
+declare type TextStyleProps = WithThemeShorthandsPseudosMediaAnimation<Omit<TextStyle, 'display' | 'backfaceVisibility'> & TransformStyleProps & WebOnlyStyleProps>;
 export declare type TextProps = ReactTextProps & TextStyleProps & ComponentPropsBase & {
     ellipse?: boolean;
     selectable?: boolean;

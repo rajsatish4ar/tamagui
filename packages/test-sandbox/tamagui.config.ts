@@ -1,9 +1,19 @@
+import { createAnimations } from '@tamagui/reanimated-animations'
 import { createTamagui } from 'tamagui'
 
 import { themes } from './themes'
 import { tokens } from './tokens'
 
+export const animations = createAnimations({
+  springy: {
+    type: 'spring',
+    damping: 20,
+    stiffness: 90,
+  },
+})
+
 const config = createTamagui({
+  animations,
   defaultTheme: 'light',
   shorthands: {
     ac: 'alignContent',

@@ -1,5 +1,5 @@
-import React, { useLayoutEffect } from 'react'
-import { Button, Theme } from 'tamagui'
+import React, { useLayoutEffect, useState } from 'react'
+import { Button } from 'tamagui'
 
 import Tamagui from './tamagui.config'
 
@@ -13,9 +13,19 @@ export const Sandbox = () => {
     }
   }, [])
 
+  const [scale, setScale] = useState(1)
+
   return (
     <Tamagui.Provider defaultTheme="light">
-      <Button>ashuh?</Button>
+      <Button
+        animation="springy"
+        scale={scale}
+        onPress={() => {
+          setScale(Math.max(0.5, Math.random() * 3))
+        }}
+      >
+        hello world
+      </Button>
     </Tamagui.Provider>
   )
 }
