@@ -16,6 +16,8 @@ module.exports = {
       'react-native$': 'react-native-web',
       react: require.resolve('react'),
       'react-dom': require.resolve('react-dom'),
+      react$: require.resolve('react'),
+      'react-dom$': require.resolve('react-dom'),
     },
   },
   devServer: {
@@ -47,7 +49,7 @@ module.exports = {
           },
           {
             test: /\.[jt]sx?$/,
-            exclude: /node_modules\/(?!react-native-web)/g,
+            exclude: /node_modules\/(?!react-native-reanimated)/,
             use: [
               {
                 loader: 'babel-loader',
