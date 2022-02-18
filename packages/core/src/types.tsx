@@ -53,6 +53,13 @@ type GenericMedia<K extends string = string> = {
     [key: string]: number | string
   }
 }
+type GenericAnimations = {
+  [key: string]:
+    | string
+    | {
+        [key: string]: any
+      }
+}
 
 // this is the "main" typed object, which users re-define
 // (internal) keep all types directly on this object and reference them from elsewhere
@@ -74,12 +81,14 @@ export type CreateTamaguiConfig<
   A extends GenericTokens,
   B extends GenericThemes,
   C extends GenericShorthands,
-  D extends GenericMedia
+  D extends GenericMedia,
+  E extends GenericAnimations
 > = Partial<Pick<ThemeProviderProps, 'defaultTheme' | 'disableRootThemeClass'>> & {
   tokens: A
   themes: B
   shorthands: C
   media: D
+  animations: E
 }
 
 // for use in creation functions so it doesnt get overwrtitten
@@ -87,7 +96,8 @@ export type GenericTamaguiConfig = CreateTamaguiConfig<
   GenericTokens,
   GenericThemes,
   GenericShorthands,
-  GenericMedia
+  GenericMedia,
+  GenericAnimations
 >
 
 // since TamaguiConfig will be re-declared, these will all be typed globally
@@ -111,8 +121,9 @@ export type TamaguiInternalConfig<
   A extends GenericTokens = GenericTokens,
   B extends GenericThemes = GenericThemes,
   C extends GenericShorthands = GenericShorthands,
-  D extends GenericMedia = GenericMedia
-> = CreateTamaguiConfig<A, B, C, D> & {
+  D extends GenericMedia = GenericMedia,
+  E extends GenericAnimations = GenericAnimations
+> = CreateTamaguiConfig<A, B, C, D, E> & {
   Provider: (props: TamaguiProviderProps) => any
   // with $ prefixes for fast lookups (one time cost at startup vs every render)
   themeParsed: { [key: string]: Variable }

@@ -4,6 +4,8 @@ import { createTamagui } from 'tamagui'
 import { themes } from './themes'
 import { tokens } from './tokens'
 
+// in animations.native.ts:
+
 export const animations = createAnimations({
   springy: {
     type: 'spring',
@@ -11,6 +13,12 @@ export const animations = createAnimations({
     stiffness: 90,
   },
 })
+
+// in animations.ts:
+// import { createAnimations } from '@tamagui/css-animations'
+// export const animations = createAnimations({
+//   springy: 'ease-in-out 300ms',
+// })
 
 const config = createTamagui({
   animations,

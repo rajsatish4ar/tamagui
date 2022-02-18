@@ -3901,6 +3901,7 @@ __metadata:
   resolution: "@tamagui/reanimated-animations@workspace:packages/reanimated-animations"
   dependencies:
     "@tamagui/build": ^1.0.0-alpha.64
+    react-native-reanimated: ^2.4.1
   languageName: unknown
   linkType: soft
 
@@ -4014,19 +4015,19 @@ __metadata:
     "@tamagui/feather-icons": ^1.0.0-alpha.64
     "@tamagui/reanimated-animations": ^1.0.0-alpha.67
     babel-polyfill: ^6.26.0
-    css-loader: "*"
-    css-minimizer-webpack-plugin: "*"
-    esbuild-loader: "*"
+    css-loader: ^5.2.4
+    css-minimizer-webpack-plugin: ^3.1.3
+    esbuild-loader: ^2.18.0
     html-webpack-plugin: ^5.5.0
-    mini-css-extract-plugin: "*"
+    mini-css-extract-plugin: ^2.4.3
     react: "*"
     react-dom: "*"
     react-native-reanimated: ^2.4.1
-    react-native-web: "*"
+    react-native-web: ^0.17.5
     react-refresh: ^0.11.0
     tamagui: ^1.0.0-alpha.67
     tamagui-loader: ^1.0.0-alpha.67
-    webpack: "*"
+    webpack: ^5.68.0
     webpack-cli: ^4.9.2
     webpack-dev-server: ^4.7.4
   languageName: unknown
@@ -7418,24 +7419,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:*":
-  version: 6.6.0
-  resolution: "css-loader@npm:6.6.0"
-  dependencies:
-    icss-utils: ^5.1.0
-    postcss: ^8.4.5
-    postcss-modules-extract-imports: ^3.0.0
-    postcss-modules-local-by-default: ^4.0.0
-    postcss-modules-scope: ^3.0.0
-    postcss-modules-values: ^4.0.0
-    postcss-value-parser: ^4.2.0
-    semver: ^7.3.5
-  peerDependencies:
-    webpack: ^5.0.0
-  checksum: cc4117320c2bfbbc3e84cdf811fb29219f1900cf4dcebb7dbf916b7cbdfc193cd9017d19b62be2d57d22baeb791919de52bf2e3086213d184875813817ac290f
-  languageName: node
-  linkType: hard
-
 "css-loader@npm:^5.2.4":
   version: 5.2.7
   resolution: "css-loader@npm:5.2.7"
@@ -7486,7 +7469,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-minimizer-webpack-plugin@npm:*, css-minimizer-webpack-plugin@npm:^3.1.3":
+"css-minimizer-webpack-plugin@npm:^3.1.3":
   version: 3.4.1
   resolution: "css-minimizer-webpack-plugin@npm:3.4.1"
   dependencies:
@@ -8776,7 +8759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-loader@npm:*, esbuild-loader@npm:^2.18.0":
+"esbuild-loader@npm:^2.18.0":
   version: 2.18.0
   resolution: "esbuild-loader@npm:2.18.0"
   dependencies:
@@ -14401,17 +14384,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:*, mini-css-extract-plugin@npm:^2.4.3":
-  version: 2.5.3
-  resolution: "mini-css-extract-plugin@npm:2.5.3"
-  dependencies:
-    schema-utils: ^4.0.0
-  peerDependencies:
-    webpack: ^5.0.0
-  checksum: de53fbded09fd2ae81174b11754bc955fcf0e0a85b2c4df7e179fcc8a81533362498824395d43d50960b0bc93550eb2bd9cd1ded113eaa21bd84ab50ef29e65c
-  languageName: node
-  linkType: hard
-
 "mini-css-extract-plugin@npm:^0.5.0":
   version: 0.5.0
   resolution: "mini-css-extract-plugin@npm:0.5.0"
@@ -14424,6 +14396,17 @@ __metadata:
   bin:
     mini-css-extract-plugin: ""
   checksum: deec20ae4000639e4678cd28eda4694ec81ea9697dc0e62d958ee8209f404a0ce94caa234613e0f7c88c0266b72afe838252f78f2b9b35b645276544909d7504
+  languageName: node
+  linkType: hard
+
+"mini-css-extract-plugin@npm:^2.4.3":
+  version: 2.5.3
+  resolution: "mini-css-extract-plugin@npm:2.5.3"
+  dependencies:
+    schema-utils: ^4.0.0
+  peerDependencies:
+    webpack: ^5.0.0
+  checksum: de53fbded09fd2ae81174b11754bc955fcf0e0a85b2c4df7e179fcc8a81533362498824395d43d50960b0bc93550eb2bd9cd1ded113eaa21bd84ab50ef29e65c
   languageName: node
   linkType: hard
 
@@ -17078,7 +17061,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.15, postcss@npm:^8.3.5, postcss@npm:^8.4.5":
+"postcss@npm:^8.2.15, postcss@npm:^8.3.5":
   version: 8.4.6
   resolution: "postcss@npm:8.4.6"
   dependencies:
@@ -19951,7 +19934,7 @@ __metadata:
     react: "*"
     react-dom: "*"
     react-native-gesture-handler: ^2.2.0
-    react-native-reanimated: ^2.3.1
+    react-native-reanimated: ^2.4.1
     react-native-safe-area-context: ^3.3.2
     react-native-web: ^0.17.5
   peerDependencies:
@@ -20738,23 +20721,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.6.0-beta":
-  version: 4.6.0-beta
-  resolution: "typescript@npm:4.6.0-beta"
+"typescript@npm:4.6.1-rc":
+  version: 4.6.1-rc
+  resolution: "typescript@npm:4.6.1-rc"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: da9ea9760add3d6ab09270717bce661e9a2aa24a0f04562244dd54613464d096d4647096f2a9c07f4cb0e2d7b1c28ac37d27f964c54d382f9a9187d91ee578e4
+  checksum: d456efbc299b3569e049b4cefb92c920b9b631d88f3e85ea9326ee185cb872de98fb02e4ad9e998ae12491e9d5025ee4a85f45f6fe938709cabae9d419c6108b
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A4.6.0-beta#~builtin<compat/typescript>":
-  version: 4.6.0-beta
-  resolution: "typescript@patch:typescript@npm%3A4.6.0-beta#~builtin<compat/typescript>::version=4.6.0-beta&hash=493e53"
+"typescript@patch:typescript@npm%3A4.6.1-rc#~builtin<compat/typescript>":
+  version: 4.6.1-rc
+  resolution: "typescript@patch:typescript@npm%3A4.6.1-rc#~builtin<compat/typescript>::version=4.6.1-rc&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: fb56ac2d919cd110a904cc71d9ccbf96e2d2914b599336f4e49a69fe8c4447a560d53a5b3a80efd6439d67e83d2ada16e961f62dc5e5ae2eeed967bf4b9cd7ac
+  checksum: 27bc11254482fa74b50a2a9d4c8114ecbaf02b129ac523de49703dec4efe61831ab8235f5a412fbc8c14d51f2d1c4d7313216ab40e47bfb2524bad6e70bf2243
   languageName: node
   linkType: hard
 

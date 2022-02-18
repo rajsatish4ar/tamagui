@@ -1,6 +1,3 @@
-import * as RadixColors from '@tamagui/colors'
-
-import { colorNames } from './colors'
 import { tokens } from './tokens'
 
 export type MyTheme = typeof light
@@ -53,50 +50,7 @@ const dark = {
   ...darkColors,
 }
 
-const colorThemes: Record<typeof colorNames[number], typeof light> = {} as any
-for (const key of colorNames) {
-  for (const scheme of ['light', 'dark']) {
-    const isDark = scheme === 'dark'
-    const colorKey = isDark ? `${key}Dark` : key
-    const colorValues = RadixColors[colorKey]
-    const offset = isDark ? -1 : 0
-    colorThemes[`${key}-${scheme}`] = {
-      color: isDark ? '#ddd' : colorValues[`${key}12`],
-      color2: isDark ? dark.color2 : light.color2,
-      color3: colorValues[`${key}11`],
-      color4: colorValues[`${key}10`],
-      bg: colorValues[`${key}${2 + offset}`],
-      bg2: colorValues[`${key}${3 + offset}`],
-      bg3: colorValues[`${key}${4 + offset}`],
-      bg4: colorValues[`${key}${5 + offset}`],
-      bgTransparent: colorValues[`${key}${1 + offset}`],
-      borderColor: colorValues[`${key}${4 + offset}`],
-      borderColor2: colorValues[`${key}${5 + offset}`],
-      shadowColor: isDark ? dark.shadowColor : light.shadowColor,
-    }
-  }
-}
-
 export const themes = {
   dark,
   light,
-  ...colorThemes,
-  'active-light': {
-    ...colorThemes['blue-dark'],
-    bg: tokens.color.blue1,
-    bg2: tokens.color.blue3,
-    bg3: tokens.color.blue3,
-    bg4: tokens.color.blue5,
-    color: tokens.color.blue10,
-    color2: tokens.color.blue11,
-  },
-  'active-dark': {
-    ...colorThemes['blue-light'],
-    bg: tokens.color.blue12,
-    bg2: tokens.color.blue12,
-    bg3: tokens.color.blue12,
-    bg4: tokens.color.blue10,
-    color: tokens.color.blue1,
-    color2: tokens.color.blue2,
-  },
 } as const

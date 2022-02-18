@@ -9,5 +9,5 @@ export declare type CreateTamaguiProps = TamaguiProviderProps & Partial<Omit<Gen
     };
     mediaQueryDefaultActive?: MediaQueryKey[];
 };
-export declare function createTamagui<Conf extends CreateTamaguiProps>(config: Conf): Conf extends CreateTamaguiConfig<infer A, infer B, infer C, infer D> ? TamaguiInternalConfig<A, B, C, D> : unknown;
+export declare function createTamagui<Conf extends CreateTamaguiProps>(config: Conf): Conf extends CreateTamaguiConfig<infer A, infer B, infer C, infer D, infer E> ? TamaguiInternalConfig<A, B, C, D, E> : unknown;
 //# sourceMappingURL=createTamagui.d.ts.map

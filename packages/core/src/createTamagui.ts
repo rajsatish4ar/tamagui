@@ -31,8 +31,8 @@ const createdConfigs = new WeakMap<any, boolean>()
 
 export function createTamagui<Conf extends CreateTamaguiProps>(
   config: Conf
-): Conf extends CreateTamaguiConfig<infer A, infer B, infer C, infer D>
-  ? TamaguiInternalConfig<A, B, C, D>
+): Conf extends CreateTamaguiConfig<infer A, infer B, infer C, infer D, infer E>
+  ? TamaguiInternalConfig<A, B, C, D, E>
   : unknown {
   // config is re-run by the @tamagui/static, dont double validate
   if (createdConfigs.has(config)) {
@@ -143,6 +143,7 @@ export function createTamagui<Conf extends CreateTamaguiProps>(
   }
 
   const next: TamaguiInternalConfig = {
+    animations: {},
     shorthands: {},
     media: {},
     ...config,

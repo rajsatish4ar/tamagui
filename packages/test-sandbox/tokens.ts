@@ -77,41 +77,12 @@ const interFont = createFont({
   },
 })
 
-const monoFont = createFont({
-  family: 'Monospace',
-  size: {
-    1: 10,
-    2: 11,
-    3: 12,
-    4: 13,
-    5: 14,
-    6: 15,
-    7: 16,
-  },
-  lineHeight: {
-    1: 15,
-    2: 20,
-    3: 20,
-    4: 21,
-    5: 23,
-    6: 25,
-  },
-  weight: {
-    4: '300',
-    6: '700',
-  },
-  letterSpacing: {
-    4: 0,
-  },
-})
-
 export const tokens = createTokens({
   size,
   space,
   font: {
     title: interFont,
     body: interFont,
-    mono: monoFont,
   },
   zIndex: {
     0: 0,
