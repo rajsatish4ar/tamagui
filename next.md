@@ -1,3 +1,4 @@
+- document <EnsureFlexed />
 - fix theming
 - space => gap
 - ~button textProps => child selectors~
@@ -53,6 +54,8 @@
 
 - fix: media queries in styled() not working
 - fix: <Paragraph size={} /> not accepting simple numbers
+
+- Text selectColor
 
 - themes: mobile sizing separate :)
 

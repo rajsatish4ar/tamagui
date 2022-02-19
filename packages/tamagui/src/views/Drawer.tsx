@@ -37,11 +37,11 @@ export const Drawer = withStaticProperties(
           handleComponent: null,
         })}
         backgroundStyle={{
-          backgroundColor: theme.bg?.toString(),
+          backgroundColor: theme.bg2?.toString(),
           shadowColor: theme.shadowColor?.toString(),
           shadowRadius: 10,
         }}
-        snapPoints={['40%']}
+        snapPoints={['80%']}
         ref={sheetRef}
         {...(!!onChange && {
           onChange: (i) => {
