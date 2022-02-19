@@ -1,4 +1,11 @@
-import { ThemeableProps, getTokens, styled, themeable, useTheme } from '@tamagui/core'
+import {
+  StaticComponent,
+  ThemeableProps,
+  getTokens,
+  styled,
+  themeable,
+  useTheme,
+} from '@tamagui/core'
 import React, { forwardRef, isValidElement } from 'react'
 
 import { getFontSize } from '../helpers/getFontSize'
@@ -13,7 +20,6 @@ type IconProp = JSX.Element | ((props: { color?: string; size?: number }) => JSX
 export type ButtonProps = InteractiveFrameProps &
   ThemeableProps & {
     color?: SizableTextProps['color']
-    textProps?: Omit<SizableTextProps, 'children'>
     noTextWrap?: boolean
     icon?: IconProp
     iconAfter?: IconProp
@@ -32,7 +38,6 @@ export const Button = ButtonFrame.extractable(
         icon,
         iconAfter,
         space,
-        textProps,
         noTextWrap,
         theme: themeName,
         size = '$4',
@@ -54,6 +59,20 @@ export const Button = ButtonFrame.extractable(
       const themedIcon = icon ? addTheme(icon) : null
       const themedIconAfter = iconAfter ? addTheme(iconAfter) : null
 
+      const contents = noTextWrap
+        ? children
+        : React.Children.map(children, (child) => {
+            const component = typeof child !== 'string' ? (child['type'] as StaticComponent) : null
+            if (component?.staticConfig?.isText) {
+              return child
+            }
+            return (
+              <SizableText size={size} color={color} flexGrow={0} flexShrink={1} ellipse>
+                {children}
+              </SizableText>
+            )
+          })
+
       return (
         <ButtonFrame
           hoverable
@@ -64,25 +83,7 @@ export const Button = ButtonFrame.extractable(
           {...rest}
         >
           {themedIcon}
-          {noTextWrap ? (
-            children
-          ) : !children ? null : textProps ? (
-            // flex shrink = 1, flex grow = 0 makes buttons shrink properly in native
-            <SizableText
-              flexGrow={0}
-              flexShrink={1}
-              ellipse
-              size={size}
-              color={color}
-              {...textProps}
-            >
-              {children}
-            </SizableText>
-          ) : (
-            <SizableText size={size} color={color} flexGrow={0} flexShrink={1} ellipse>
-              {children}
-            </SizableText>
-          )}
+          {contents}
           {themedIconAfter}
         </ButtonFrame>
       )

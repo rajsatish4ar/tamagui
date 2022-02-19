@@ -224,6 +224,14 @@ export function createComponent<ComponentPropTypes extends Object = DefaultProps
       isPressing ? pseudos.pressStyle || null : null,
     ]
 
+    if (tamaguiConfig.useAnimations && props.animation) {
+      console.log('attempt using animations', props.animation)
+      const res = tamaguiConfig.useAnimations(props, {
+        style,
+      })
+      console.log('got', res)
+    }
+
     if (isWeb) {
       const stylesClassNames = useStylesAsClassname(styles)
       const classList = isText

@@ -23,8 +23,12 @@ export declare function createExtractor(): {
         [x: string]: {
             [key: string]: string | number;
         };
+    }, {
+        [key: string]: string | {
+            [key: string]: any;
+        };
     }>;
-    parse: (fileOrPath: NodePath<t.Program> | t.File, { config, importsWhitelist, evaluateVars, shouldPrintDebug, sourcePath, onExtractTag, getFlattenedNode, disableExtraction, disableExtractInlineMedia, disableExtractVariables, disableDebugAttr, prefixLogs, ...props }: ExtractorParseProps) => {
+    parse: (fileOrPath: NodePath<t.Program> | t.File, { config, importsWhitelist, evaluateVars, shouldPrintDebug, sourcePath, onExtractTag, getFlattenedNode, disable, disableExtraction, disableExtractInlineMedia, disableExtractVariables, disableDebugAttr, prefixLogs, ...props }: ExtractorParseProps) => {
         flattened: number;
         optimized: number;
         modified: number;

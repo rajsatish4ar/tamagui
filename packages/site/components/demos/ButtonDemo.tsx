@@ -4,30 +4,53 @@ import { Button, InteractiveContainer, Theme, XStack, YStack } from 'tamagui'
 
 export function ButtonDemo() {
   return (
-    <XStack space>
-      <Theme name="dark">
-        <Buttons ai="flex-end" />
-      </Theme>
-      <Theme name="light">
-        <Buttons ai="flex-start" />
-      </Theme>
+    <XStack maxHeight="100%" maxWidth="100%" justifyContent="flex-start">
+      <XStack space px="$8">
+        <Theme name="dark">
+          <Buttons />
+        </Theme>
+        <Theme name="light">
+          <Buttons />
+        </Theme>
+        <Theme name="blue">
+          <Buttons />
+        </Theme>
+        <Theme name="red">
+          <Buttons />
+        </Theme>
+        <Theme name="orange">
+          <Buttons />
+        </Theme>
+      </XStack>
     </XStack>
   )
 }
 
 function Buttons(props) {
   return (
-    <YStack elevation="$6" w={180} bc="$bg" p="$3" br="$2" space="$2" {...props}>
+    <YStack
+      ai="center"
+      jc="center"
+      elevation="$6"
+      w={180}
+      bc="$bg"
+      p="$3"
+      br="$4"
+      space="$2"
+      {...props}
+    >
       <Button>Plain</Button>
       <Button icon={Airplay} size="$6">
         Large
       </Button>
-      <Button themeInverse iconAfter={Gift} size="$2">
-        Small Inversed
-      </Button>
-      <Button icon={Activity} size="$1">
-        XS
-      </Button>
+      <XStack space>
+        <Button themeInverse iconAfter={Gift} size="$2">
+          Small Inversed
+        </Button>
+        <Button icon={Activity} size="$1">
+          XS
+        </Button>
+      </XStack>
       <InteractiveContainer>
         <Button size="$3" br={0} theme="active">
           Active

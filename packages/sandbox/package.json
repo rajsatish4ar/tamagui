@@ -1,5 +1,5 @@
 {
-  "name": "@tamagui/test-sandbox",
+  "name": "@tamagui/sandbox",
   "version": "1.0.0-alpha.67",
   "private": true,
   "scripts": {

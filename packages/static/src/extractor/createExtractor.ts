@@ -66,6 +66,7 @@ export function createExtractor() {
         sourcePath = '',
         onExtractTag,
         getFlattenedNode,
+        disable,
         disableExtraction,
         disableExtractInlineMedia,
         disableExtractVariables,
@@ -74,6 +75,10 @@ export function createExtractor() {
         ...props
       }: ExtractorParseProps
     ) => {
+      if (disable) {
+        return null
+      }
+
       if (sourcePath === '') {
         throw new Error(`Must provide a source file name`)
       }

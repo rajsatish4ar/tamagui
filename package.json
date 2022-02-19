@@ -24,6 +24,7 @@
     "prettier": "prettier --write \"**/*.{ts,tsx}\" || true",
     "publish": "lerna publish",
     "site": "yarn workspace @tamagui/site dev",
+    "sandbox": "yarn workspace @tamagui/sandbox dev",
     "fix": "yarn manypkg fix"
   },
   "resolutions": {

@@ -60,8 +60,6 @@ export const Theme = (props: ThemeProps) => {
     })
   }, [themes, name, parentName])
 
-  console.log('what', props, name, theme)
-
   if (!name || !theme) {
     console.warn('no theme', { name, theme })
     return props.children

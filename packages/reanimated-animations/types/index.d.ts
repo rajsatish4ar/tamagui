@@ -1,2 +1,2 @@
-export declare function createAnimations<A>(animations: A): A;
+export * from './createAnimations';
 //# sourceMappingURL=index.d.ts.map

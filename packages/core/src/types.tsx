@@ -1,3 +1,5 @@
+// TODO split this into own package @tamagui/types to share with animations packages
+
 import CSS from 'csstype'
 import React, { RefObject } from 'react'
 import {
@@ -116,6 +118,18 @@ export type ThemeKeyVariables = `$${ThemeKeys}`
 // export type FontSizes = TamaguiConfig['tokens']['fontSizes'][keyof TamaguiConfig['tokens']['fontSizes']]
 // export type Colors = TamaguiConfig['tokens']['colors'][keyof TamaguiConfig['tokens']['colors']]
 
+export type AnimationHook = (
+  props: any,
+  extra: {
+    style: any
+    hoverStyle?: any
+    pressStyle?: any
+    exitStyle?: any
+    onDidAnimate?: any
+    delay?: number
+  }
+) => any
+
 // this is the config generated via createTamagui()
 export type TamaguiInternalConfig<
   A extends GenericTokens = GenericTokens,
@@ -126,6 +140,7 @@ export type TamaguiInternalConfig<
 > = CreateTamaguiConfig<A, B, C, D, E> & {
   Provider: (props: TamaguiProviderProps) => any
   // with $ prefixes for fast lookups (one time cost at startup vs every render)
+  useAnimations?: AnimationHook
   themeParsed: { [key: string]: Variable }
   tokensParsed: CreateTokens<Variable>
   themeConfig: any

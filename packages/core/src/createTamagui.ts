@@ -7,6 +7,7 @@ import { Variable, createVariable, isVariable } from './createVariable'
 import { createTamaguiProvider } from './helpers/createTamaguiProvider'
 import { configureMedia } from './hooks/useMedia'
 import {
+  AnimationHook,
   CreateTamaguiConfig,
   GenericTamaguiConfig,
   MediaQueryKey,
@@ -16,7 +17,11 @@ import {
 
 export type CreateTamaguiProps = TamaguiProviderProps & // we omit and re-declare it because we need to allow instantation types to be flexible
   // user then re-defines the types after createTamagui returns the typed object they want
-  Partial<Omit<GenericTamaguiConfig, 'themes' | 'tokens'>> & {
+  Partial<Omit<GenericTamaguiConfig, 'themes' | 'tokens' | 'animations'>> & {
+    animations?: {
+      definitions: Object
+      useAnimations: AnimationHook
+    }
     tokens: GenericTamaguiConfig['tokens']
     themes: {
       [key: string]: {
@@ -143,10 +148,11 @@ export function createTamagui<Conf extends CreateTamaguiProps>(
   }
 
   const next: TamaguiInternalConfig = {
-    animations: {},
     shorthands: {},
     media: {},
     ...config,
+    useAnimations: config.animations?.useAnimations,
+    animations: config.animations?.definitions || ({} as any),
     Provider: createTamaguiProvider({
       defaultTheme: 'light',
       ...config,

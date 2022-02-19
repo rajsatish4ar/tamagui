@@ -1,6 +1,17 @@
+// debug
 import { FastForward, Plus } from '@tamagui/feather-icons'
 import React, { useState } from 'react'
-import { Button, H2, H4, InteractiveContainer, Paragraph, Theme, XStack, YStack } from 'tamagui'
+import {
+  Button,
+  H2,
+  H4,
+  InteractiveContainer,
+  Paragraph,
+  Text,
+  Theme,
+  XStack,
+  YStack,
+} from 'tamagui'
 
 import { CodeDemo } from './CodeDemo'
 import { ContainerLarge } from './Container'
@@ -66,14 +77,14 @@ export function HeroExample() {
           {examples.map((example, i) => {
             return (
               <Button
-                textProps={{ fontFamily: '$mono' }}
                 onPress={() => setActiveIndex(i)}
                 theme={i === activeIndex ? 'active' : null}
-                chromeless={i !== activeIndex}
+                // chromeless={i !== activeIndex}
                 key={i}
-                br={0}
+                borderRadius="$0"
+                backgroundColor="red"
               >
-                {example.name}
+                <Paragraph fontFamily="$mono">{example.name}</Paragraph>
               </Button>
             )
           })}

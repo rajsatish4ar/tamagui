@@ -9,6 +9,7 @@ export interface TamaguiOptions {
     config?: string;
     evaluateVars?: boolean;
     importsWhitelist?: string[];
+    disable?: boolean;
     disableExtraction?: boolean;
     disableDebugAttr?: boolean;
     disableExtractInlineMedia?: boolean;

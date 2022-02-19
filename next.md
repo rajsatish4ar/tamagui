@@ -1,4 +1,5 @@
 - space => gap
+- ~button textProps => child selectors~
 
 - animations
 	- reanimated
@@ -38,7 +39,12 @@
 
 - extract gap to css (+ work with visually hidden)
 
+- <Combobox />
+  - like vercel, make it adapt into a drawer on mobile
+    - option to render as native combo on ios/android
+
 - kitchen sink app
+- helper fns docs
 
 - <LinearGradient />
   - fix using theme values

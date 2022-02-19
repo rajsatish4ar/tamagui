@@ -73,6 +73,7 @@ module.exports = {
                   config: './tamagui.config.ts',
                   components: ['tamagui'],
                   importsWhitelist: ['constants.js'],
+                  disable: NODE_ENV === 'development',
                 },
               },
             ],

@@ -72,8 +72,17 @@ export declare type Themes = TamaguiConfig['themes'];
 export declare type ThemeName = keyof Themes extends `${infer Prefix}-${string}` ? Prefix | keyof Themes : keyof Themes;
 export declare type ThemeKeys = keyof ThemeObject;
 export declare type ThemeKeyVariables = `$${ThemeKeys}`;
+export declare type AnimationHook = (props: any, extra: {
+    style: any;
+    hoverStyle?: any;
+    pressStyle?: any;
+    exitStyle?: any;
+    onDidAnimate?: any;
+    delay?: number;
+}) => any;
 export declare type TamaguiInternalConfig<A extends GenericTokens = GenericTokens, B extends GenericThemes = GenericThemes, C extends GenericShorthands = GenericShorthands, D extends GenericMedia = GenericMedia, E extends GenericAnimations = GenericAnimations> = CreateTamaguiConfig<A, B, C, D, E> & {
     Provider: (props: TamaguiProviderProps) => any;
+    useAnimations?: AnimationHook;
     themeParsed: {
         [key: string]: Variable;
     };

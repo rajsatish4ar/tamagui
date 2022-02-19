@@ -1,6 +1,10 @@
 import { Variable } from './createVariable';
-import { CreateTamaguiConfig, GenericTamaguiConfig, MediaQueryKey, TamaguiInternalConfig, TamaguiProviderProps } from './types';
-export declare type CreateTamaguiProps = TamaguiProviderProps & Partial<Omit<GenericTamaguiConfig, 'themes' | 'tokens'>> & {
+import { AnimationHook, CreateTamaguiConfig, GenericTamaguiConfig, MediaQueryKey, TamaguiInternalConfig, TamaguiProviderProps } from './types';
+export declare type CreateTamaguiProps = TamaguiProviderProps & Partial<Omit<GenericTamaguiConfig, 'themes' | 'tokens' | 'animations'>> & {
+    animations?: {
+        definitions: Object;
+        useAnimations: AnimationHook;
+    };
     tokens: GenericTamaguiConfig['tokens'];
     themes: {
         [key: string]: {
