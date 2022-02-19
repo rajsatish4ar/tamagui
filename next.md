@@ -1,3 +1,4 @@
+- fix theming
 - space => gap
 - ~button textProps => child selectors~
 

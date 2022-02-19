@@ -45,7 +45,7 @@ export const InteractiveFrame = styled(XStack, {
     pressable: {
       true: {
         pressStyle: {
-          backgroundColor: '$bg4',
+          backgroundColor: '$bg',
         },
       },
     },
